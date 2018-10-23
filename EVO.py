@@ -38,16 +38,15 @@ async def on_message(message):
             await client.send_message(message.channel, "Only AntiSepticBoi#9970 Can Run This Command!")            
     
   await client.process_commands(message)
-   
-    if message.content.startswith('=say'):
-        if message.author.id == "475825699123494932":
+   if message.content.startswith('=say'):
+       if message.author.id == "475825699123494932":
         args = message.content.split(" ")
         #args[0] = +say
         #args[1] = Hey
         #args[2] = There
         #args[1:] = Hey There
         await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
-        else: 
-            await client.send_message(message.channel, "Only AntiSepticBoi#9970 Can Run This Command!") 
+    else: 
+        await client.send_message(message.channel, "Only AntiSepticBoi#9970 Can Run This Command!") 
              
 client.run(os.getenv('TOKEN'))
