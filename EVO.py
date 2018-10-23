@@ -29,6 +29,13 @@ async def on_message(message):
             await client.send_message(message.channel, msg)
         else: 
             await client.send_message(message.channel, "Only AntiSepticBoi#9970 Can Run This Command!")
+            
+    if message.content.startswith('=invite'):
+        if message.author.id == "475825699123494932":
+            msg = 'https://discordapp.com/api/oauth2/authorize?client_id=499643998194106369&permissions=0&scope=bot'.format(message)
+            await client.send_message(message.channel, msg)
+        else: 
+            await client.send_message(message.channel, "Only AntiSepticBoi#9970 Can Run This Command!")            
     
     await client.process_commands(message)
    
@@ -40,5 +47,4 @@ async def on_message(message):
         #args[1:] = Hey There
         await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
              
-client.loop.create_task(list_servers())
 client.run(os.getenv('TOKEN'))
