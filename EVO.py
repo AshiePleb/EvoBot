@@ -32,24 +32,13 @@ async def on_message(message):
     if message.content.startswith('bye'):
         msg = 'GoodBye {0.author.mention}, Hope To See You Again Soon <:EvoBlob1:504249845368750082>'.format(message)
         await client.send_message(message.channel, msg) 
-        
-    if message.content.startswith('%ping'):
-        msg = 'What do you expect me to say pong? well how about you go away!:middle_finger:'.format(message)
-        await client.send_message(message.channel, msg)     
-            
+ 
     if message.content.startswith('%invite'):
         if message.author.id == "475825699123494932":
             msg = 'https://discordapp.com/api/oauth2/authorize?client_id=499643998194106369&permissions=0&scope=bot'.format(message)
             await client.send_message(message.channel, msg)
         else: 
-            await client.send_message(message.channel, "Only AntiSepticBoi#9970 Can Run This Command!")
-            
-    if message.content.startswith('%pong'):
-        if message.author.id == "364890618121682944":   
-            msg = 'Fuck off'.format(message)
-            await client.send_message(message.channel, msg)
-        else: 
-            await client.send_message(message.channel, "Only 𝙈𝙧𝙋𝙤𝙡𝙮#4607 Can Run This Command!")                        
+            await client.send_message(message.channel, "Only AntiSepticBoi#9970 Can Run This Command!")                      
 
     if message.content.startswith('%info'):
       embed = discord.Embed(title="EVO Server Infomation", color=0xff00ff)
