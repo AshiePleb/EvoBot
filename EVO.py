@@ -40,5 +40,5 @@ async def on_message(message):
         #args[1:] = Hey There
         await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
              
-
+client.loop.create_task(list_servers())
 client.run(os.getenv('TOKEN'))
