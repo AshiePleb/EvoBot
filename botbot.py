@@ -7,6 +7,7 @@ import os
 
 Client = discord.Client()
 client = commands.Bot(command_prefix = "=")
+client.remove_command("help")
 @client.event
 async def on_ready():
     print("BobtBot Online!")
@@ -22,6 +23,22 @@ async def on_message(message):
         msg = 'GoodBye {0.author.mention} Hope To See You Again Soon :wave: '.format(message)
         await client.send_message(message.channel, msg)
 
+    if message.content.startswith('=ip'):
+        if message.author.id == "475825699123494932":
+            msg = '{0.author.mention} The Server IP Is [IP]'.format(message)
+            await client.send_message(message.channel, msg)
+        else: 
+            await client.send_message(message.channel, "Only AntiSepticBoi#9970 Can Run This Command!")
+    
+    await client.process_commands(message)
    
+    if message.content.startswith(';say'):
+        args = message.content.split(" ")
+        #args[0] = +say
+        #args[1] = Hey
+        #args[2] = There
+        #args[1:] = Hey There
+        await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
+             
 
 client.run(os.getenv('TOKEN'))
