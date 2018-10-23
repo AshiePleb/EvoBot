@@ -53,7 +53,7 @@ async def on_message(message):
       embed.add_field(name="<:EvoDiamond:504246347298242573> info <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Lists the EVO Servers infomation <:EvoBlob1:504249845368750082>", inline=False) 
       await client.send_message(message.channel, embed=embed) 
       
-    iif message.content.startswith('%staff'):
+    if message.content.startswith('%staff'):
       embed = discord.Embed(title="Here is the list of EVO staff!", color=0xff00ff)
       embed.add_field(name="<:EvoDiamond:504246347298242573> MrPoly <:EvoDiamond:504246347298242573>", value+"<:EvoIndent:504251143585660928>",inline=False)
       embed.add_field(name="<:EvoDiamond:504246347298242573> Jackaboi <:EvoDiamond:504246347298242573>", value+"<:EvoIndent:504251143585660928>",inline=False)
