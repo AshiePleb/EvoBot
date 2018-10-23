@@ -55,13 +55,13 @@ async def on_message(message):
       
     if message.content.startswith('%staff'):
       embed = discord.Embed(title="Here is the list of EVO staff!", color=0xff00ff)
-      embed.add_field(name="<:EvoDiamond:504246347298242573> MrPoly <:EvoDiamond:504246347298242573>", value="<:EvoIndent:504251143585660928>",inline=False)
-      embed.add_field(name="<:EvoDiamond:504246347298242573> Jackaboi <:EvoDiamond:504246347298242573>", value="<:EvoIndent:504251143585660928>",inline=False)
-      embed.add_field(name="<:EvoDiamond:504246347298242573> TheDeibo <:EvoDiamond:504246347298242573>", value="<:EvoIndent:504251143585660928>",inline=False)
-      embed.add_field(name="<:EvoDiamond:504246347298242573> VitalPanda <:EvoDiamond:504246347298242573>", value="<:EvoIndent:504251143585660928>",inline=False)
-      embed.add_field(name="<:EvoDiamond:504246347298242573> Link1147 <:EvoDiamond:504246347298242573>", value="<:EvoIndent:504251143585660928>",inline=False)
-      embed.add_field(name="<:EvoDiamond:504246347298242573> Tom <:EvoDiamond:504246347298242573>", value="<:EvoIndent:504251143585660928>",inline=False)
-      embed.add_field(name="<:EvoDiamond:504246347298242573> Blaze <:EvoDiamond:504246347298242573>", value="<:EvoIndent:504251143585660928>",inline=False)
+      embed.add_field(name="<:EvoDiamond:504246347298242573> MrPoly <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Owner <:EvoBlob1:504249845368750082>",inline=False)
+      embed.add_field(name="<:EvoDiamond:504246347298242573> Jackaboi <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Duel Manager <:EvoBlob1:504249845368750082>",inline=False)
+      embed.add_field(name="<:EvoDiamond:504246347298242573> TheDeibo <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Duel Manager <:EvoBlob1:504249845368750082>",inline=False)
+      embed.add_field(name="<:EvoDiamond:504246347298242573> VitalPanda <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Builder Supervisor <:EvoBlob1:504249845368750082>",inline=False)
+      embed.add_field(name="<:EvoDiamond:504246347298242573> Link1147 <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Staff <:EvoBlob1:504249845368750082>",inline=False)
+      embed.add_field(name="<:EvoDiamond:504246347298242573> Tom <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Staff <:EvoBlob1:504249845368750082>",inline=False)
+      embed.add_field(name="<:EvoDiamond:504246347298242573> Blaze <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Staff <:EvoBlob1:504249845368750082>",inline=False)
       await client.send_message(message.channel, embed=embed) 
     
     if message.content.startswith('%say'):
