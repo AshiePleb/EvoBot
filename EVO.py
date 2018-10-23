@@ -11,13 +11,13 @@ client.remove_command("help")
 @client.event
 async def on_ready():
     print("Bot is ready!")
-    await client.change_presence(game=discord.Game(name="EVO <3"))
+    await client.change_presence(game=discord.Game(name="%help | EVO <3"))
     await asyncio.sleep(10)
-    await client.change_presence(game=discord.Game(name="PolyBalls <3"))
+    await client.change_presence(game=discord.Game(name="%help | PolyBalls <3"))
     await asyncio.sleep(10)
-    await client.change_presence(game=discord.Game(name="Jack <3"))
+    await client.change_presence(game=discord.Game(name="%help | Jack <3"))
     await asyncio.sleep(10)
-    await client.change_presence(game=discord.Game(name="TheDeibo <3"))
+    await client.change_presence(game=discord.Game(name="%help | TheDeibo <3"))
     await asyncio.sleep(10)
 
 @client.event
