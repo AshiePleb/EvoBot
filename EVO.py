@@ -18,7 +18,7 @@ async def on_ready():
     await client.change_presence(game=discord.Game(name="%help | Jack <3"))
     await asyncio.sleep(10)
     await client.change_presence(game=discord.Game(name="%help | TheDeibo <3"))
-
+    await asyncio.sleep(10)
 @client.event
 async def on_message(message):
     if message.content.startswith('hello'):
