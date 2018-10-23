@@ -19,6 +19,10 @@ async def on_ready():
     await asyncio.sleep(10)
     await client.change_presence(game=discord.Game(name="%help | TheDeibo <3"))
     await asyncio.sleep(10)
+    wait client.change_presence(game=discord.Game(name="https://discord.gg/zRh8WP6"))
+    await asyncio.sleep(10)
+    wait client.change_presence(game=discord.Game(name="http://soo.gd/evope"))
+    await asyncio.sleep(10)
 
 @client.event
 async def on_message(message):
