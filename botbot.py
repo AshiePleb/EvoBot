@@ -32,7 +32,7 @@ async def on_message(message):
     
     await client.process_commands(message)
    
-    if message.content.startswith(';say'):
+    if message.content.startswith('=say'):
         args = message.content.split(" ")
         #args[0] = +say
         #args[1] = Hey
