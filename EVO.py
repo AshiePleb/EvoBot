@@ -45,7 +45,7 @@ async def on_message(message):
             await client.send_message(message.channel, "Only AntiSepticBoi#9970 Can Run This Command!")
             
     if message.content.startswith('%pong'):
-        if message.author.id == "364890618121682944", "475825699123494932":
+        if message.author.id == "364890618121682944, 475825699123494932":
             msg = 'Fuck off'.format(message)
             await client.send_message(message.channel, msg)
         else: 
