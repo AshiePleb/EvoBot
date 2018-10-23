@@ -39,9 +39,9 @@ async def on_message(message):
    
     if message.content.startswith('/infomation'):
       embed = discord.Embed(title="EVO Server Infomation", description="<:EvoIndent:504251143585660928>", color=0xff00ff)
-      embed.add_field(name="<:EvoDiamond:504246347298242573> IP", value="Coming Soon! <:EvoBlob1:504249845368750082>", inline=False)
-      embed.add_field(name="<:EvoDiamond:504246347298242573> Forum", value="http://evonetwork.ga/ <:EvoBlob1:504249845368750082>", inline=False)
-      embed.add_field(name="<:EvoDiamond:504246347298242573> Discord", value="https://discord.gg/zRh8WP6 <:EvoBlob1:504249845368750082>", inline=False)
+      embed.add_field(name="<:EvoDiamond:504246347298242573> IP <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Coming Soon! <:EvoBlob1:504249845368750082>", inline=False)
+      embed.add_field(name="<:EvoDiamond:504246347298242573> Forum <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> http://evonetwork.ga/ <:EvoBlob1:504249845368750082>", inline=False)
+      embed.add_field(name="<:EvoDiamond:504246347298242573> Discord <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> https://discord.gg/zRh8WP6 <:EvoBlob1:504249845368750082>", inline=False)
       await client.send_message(message.channel, embed=embed)    
 
     if message.content.startswith('=say'):
