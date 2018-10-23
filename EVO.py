@@ -10,17 +10,17 @@ client = commands.Bot(command_prefix = "=")
 client.remove_command("help")
 @client.event
 async def on_ready():
-    print("BobtBot Online!")
-    await client.change_presence(game=discord.Game(name="BotBot"))
+    print("EVO Online!")
+    await client.change_presence(game=discord.Game(name="EVO <3"))
 
 @client.event
 async def on_message(message):
     if message.content.startswith('=hello'):
-        msg = 'Hello {0.author.mention} How Are You Today'.format(message)
+        msg = 'Hello {0.author.mention}, How Are You Today? <:EvoBlob1:504249845368750082>'.format(message)
         await client.send_message(message.channel, msg)
         
     if message.content.startswith('=bye'):
-        msg = 'GoodBye {0.author.mention} Hope To See You Again Soon :wave: '.format(message)
+        msg = 'GoodBye {0.author.mention}, Hope To See You Again Soon <:EvoBlob1:504249845368750082>'.format(message)
         await client.send_message(message.channel, msg)
 
     if message.content.startswith('=ip'):
