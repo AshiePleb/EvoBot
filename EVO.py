@@ -32,6 +32,10 @@ async def on_message(message):
     if message.content.startswith('bye'):
         msg = 'GoodBye {0.author.mention}, Hope To See You Again Soon <:EvoBlob1:504249845368750082>'.format(message)
         await client.send_message(message.channel, msg) 
+        
+    if message.content.startswith('!ping'):
+        msg = 'What do you expect me to say pong? well how about you go away! <:EvoBlob1:504249845368750082>'.format(message)
+        await client.send_message(message.channel, msg)     
             
     if message.content.startswith('%invite'):
         if message.author.id == "475825699123494932":
