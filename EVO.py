@@ -89,6 +89,6 @@ async def eight_ball(context):
         'It is quite possible',
         'Definitely',
     ]
-    await client.say(random.choice(possible_responses) + ", " + context.message.author.mention)      
+    await client.say(random.choice(possible_responses) + ", " + context.message.author.mention)
     
 client.run(os.getenv('TOKEN'))
