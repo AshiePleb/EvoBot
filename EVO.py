@@ -51,7 +51,6 @@ async def on_message(message):
       embed.add_field(name="<:EvoDiamond:504246347298242573> bye <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Triggers when you say bye <:EvoBlob1:504249845368750082>", inline=False)
       embed.add_field(name="<:EvoDiamond:504246347298242573> say <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Makes the bot say something when you use %say msg <:EvoBlob1:504249845368750082>", inline=False)
       embed.add_field(name="<:EvoDiamond:504246347298242573> info <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Lists the EVO Servers infomation <:EvoBlob1:504249845368750082>", inline=False) 
-      embed.set_footer(name="Evo Bot", icon_url="hhttps://images-ext-2.discordapp.net/external/Ml80fIrvP2HAK94j9ng6DDudpD2W0sfsAJqKSljQcCQ/%3Fsize%3D128/https/cdn.discordapp.com/avatars/499643998194106369/0154a6da11310d648fb09689629d0681.png")
       await client.send_message(message.channel, embed=embed) 
         
     if message.content.startswith('%say'):
