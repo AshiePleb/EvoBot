@@ -38,8 +38,7 @@ async def on_message(message):
             await client.send_message(message.channel, "Only AntiSepticBoi#9970 Can Run This Command!")            
    
     if message.content.startswith('test'):
-      embed = discord.Embed(title="test command", description="lol", color=0xff00ff)
-      embed.set_author(name="Assist", icon_url="https://cdn.discordapp.com/attachments/370955634734137345/464767241812967425/Discordpfp.png")
+      embed = discord.Embed(title="test command", description="lol", color=RANDOM)
       embed.add_field(name="test", value="testy", inline=False)
       await client.send_message(message.channel, embed=embed)    
 
