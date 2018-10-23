@@ -37,9 +37,11 @@ async def on_message(message):
         else: 
             await client.send_message(message.channel, "Only AntiSepticBoi#9970 Can Run This Command!")            
    
-    if message.content.startswith('test'):
-      embed = discord.Embed(title="test command", description="lol", color=RANDOM)
-      embed.add_field(name="test", value="testy", inline=False)
+    if message.content.startswith('/infomation'):
+      embed = discord.Embed(title="EVO Server Infomation", description="<:EvoIndent:504251143585660928>", color=0xff00ff)
+      embed.add_field(name="<:EvoDiamond:504246347298242573> IP", value="Coming Soon! <:EvoBlob1:504249845368750082>", inline=False)
+      embed.add_field(name="<:EvoDiamond:504246347298242573> Forum", value="http://evonetwork.ga/ <:EvoBlob1:504249845368750082>", inline=False)
+      embed.add_field(name="<:EvoDiamond:504246347298242573> Discord", value="https://discord.gg/zRh8WP6 <:EvoBlob1:504249845368750082>", inline=False)
       await client.send_message(message.channel, embed=embed)    
 
     if message.content.startswith('=say'):
