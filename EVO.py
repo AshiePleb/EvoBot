@@ -36,7 +36,12 @@ async def on_message(message):
             await client.send_message(message.channel, msg)
         else: 
             await client.send_message(message.channel, "Only AntiSepticBoi#9970 Can Run This Command!")            
-    
+async def test(ctx, command=None):
+    if command == None:
+        embed = discord.Embed(name="test", description="test lol", color=0x00FFFF)
+        embed.add_field(name="idk", value="fak ths", inline=True)
+        embed.set_footer(text="This Bot was coded in pyhton by AntiSepticBoi#9970", icon_url=embed.Empty)
+        await bot.say(embed=embed)    
     await client.process_commands(message)
    
     if message.content.startswith('=say'):
