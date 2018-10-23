@@ -10,8 +10,15 @@ client = commands.Bot(command_prefix = "=")
 client.remove_command("help")
 @client.event
 async def on_ready():
-    print("EVO Online!")
+    print("Bot is ready!")
     await client.change_presence(game=discord.Game(name="EVO <3"))
+    await asyncio.sleep(10)
+    await client.change_presence(game=discord.Game(name="Poly <3"))
+    await asyncio.sleep(10)
+    await client.change_presence(game=discord.Game(name="Jack <3"))
+    await asyncio.sleep(10)
+    await client.change_presence(game=discord.Game(name="TheDeibo <3"))
+    await asyncio.sleep(10)
 
 @client.event
 async def on_message(message):
