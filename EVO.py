@@ -56,13 +56,15 @@ async def on_message(message):
       embed.add_field(name="<:EvoDiamond:504246347298242573> info <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Lists the EVO Servers infomation <:EvoBlob1:504249845368750082>", inline=False) 
       await client.send_message(message.channel, embed=embed) 
     
-    if message.content.startswith('%say'):
-        if "@everyone" in messsage.content:return    
+if message.content.startswith('%say'):   
+        if message.author.id == "475825699123494932":
         args = message.content.split(" ")
         #args[0] = +say
         #args[1] = Hey
         #args[2] = There
         #args[1:] = Hey There
         await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
+        else: 
+            await client.send_message(message.channel, ":x: Error! You must be the bot owner to run this command!")
         
 client.run(os.getenv('TOKEN'))
