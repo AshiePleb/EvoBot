@@ -31,10 +31,14 @@ async def on_message(message):
         
     if message.content.startswith('bye'):
         msg = 'GoodBye {0.author.mention}, Hope To See You Again Soon <:EvoBlob1:504249845368750082>'.format(message)
-        await client.send_message(message.channel, msg)          
+        await client.send_message(message.channel, msg)
+        
+    if message.content.startswith('<@504587557045141514>'):
+        msg = '{0.author.mention}, Why you tagging me <:PeepoPinnged:501412813101858836>'.format(message)
+        await client.send_message(message.channel, msg)        
  
     if message.content.startswith('%invite'):
-        if message.author.id == "475825699123494932":
+        if message.author.id == "493883172027760661":
             msg = '[Need to update the url]'.format(message)
             await client.send_message(message.channel, msg)
         else: 
