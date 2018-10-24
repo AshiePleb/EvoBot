@@ -64,7 +64,7 @@ if message.content.startswith('%say'):
         #args[2] = There
         #args[1:] = Hey There
         await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
-        else: 
-            await client.send_message(message.channel, ":x: Error! You must be the bot owner to run this command!")
+    else: 
+        await client.send_message(message.channel, ":x: Error! You must be the bot owner to run this command!")
         
 client.run(os.getenv('TOKEN'))
