@@ -57,13 +57,11 @@ async def on_message(message):
       await client.send_message(message.channel, embed=embed) 
     
     if message.content.startswith('%say'):   
-        if message.author.id == "475825699123494932":
         args = message.content.split(" ")
         #args[0] = +say
         #args[1] = Hey
         #args[2] = There
         #args[1:] = Hey There
         await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
-    else:   
-        await client.send_message(message.channel, ":x: Error! You must be the bot owner to run this command!")
+
 client.run(os.getenv('TOKEN'))
