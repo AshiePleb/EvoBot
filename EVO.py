@@ -27,19 +27,11 @@ async def on_ready():
 async def on_message(message):
     if message.content.startswith('hello'):
         msg = 'Hello {0.author.mention}, How Are You Today? <:EvoBlob1:504249845368750082>'.format(message)
-        await client.send_message(message.channel, msg)
-        
-    if message.content.startswith('Hello'):
-        msg = 'Hello {0.author.mention}, How Are You Today? <:EvoBlob1:504249845368750082>'.format(message)
-        await client.send_message(message.channel, msg)        
+        await client.send_message(message.channel, msg)      
         
     if message.content.startswith('bye'):
         msg = 'GoodBye {0.author.mention}, Hope To See You Again Soon <:EvoBlob1:504249845368750082>'.format(message)
-        await client.send_message(message.channel, msg) 
-        
-    if message.content.startswith('Bye'):
-        msg = 'GoodBye {0.author.mention}, Hope To See You Again Soon <:EvoBlob1:504249845368750082>'.format(message)
-        await client.send_message(message.channel, msg)         
+        await client.send_message(message.channel, msg)          
  
     if message.content.startswith('%invite'):
         if message.author.id == "475825699123494932":
