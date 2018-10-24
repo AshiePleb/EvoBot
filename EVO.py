@@ -57,6 +57,7 @@ async def on_message(message):
       await client.send_message(message.channel, embed=embed) 
     
     if message.content.startswith('%say'):
+    if "@" in messsage.content:return    
         args = message.content.split(" ")
         #args[0] = +say
         #args[1] = Hey
