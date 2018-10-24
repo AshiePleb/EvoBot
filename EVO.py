@@ -35,7 +35,11 @@ async def on_message(message):
         
     if message.content.startswith('<@504587557045141514>'):
         msg = '{0.author.mention}, Why you tagging me <:PeepoPinnged:501412813101858836>'.format(message)
-        await client.send_message(message.channel, msg)        
+        await client.send_message(message.channel, msg) 
+        
+    if message.content.startswith('<@493883172027760661>'):
+        msg = '{0.author.mention} Jack is currently AFK he will respond soon! <:EvoBlob2:504721901067829248>'.format(message)
+        await client.send_message(message.channel, msg)         
  
     if message.content.startswith('%invite'):
         if message.author.id == "493883172027760661":
