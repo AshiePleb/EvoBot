@@ -38,7 +38,7 @@ async def on_message(message):
         await client.send_message(message.channel, msg) 
         
     if message.content.startswith('<@493883172027760661>'):
-        msg = '{0.author.mention} Jack is currently AFK he will respond soon! <:EvoBlob2:504721901067829248>'.format(message)
+        msg = 'Jack is currently AFK he will respond soon! <:EvoBlob2:504721901067829248>'.format(message)
         await client.send_message(message.channel, msg)         
  
     if message.content.startswith('%invite'):
