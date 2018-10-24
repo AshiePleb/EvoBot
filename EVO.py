@@ -29,16 +29,24 @@ async def on_message(message):
         msg = 'Hello {0.author.mention}, How Are You Today? <:EvoBlob1:504249845368750082>'.format(message)
         await client.send_message(message.channel, msg)
         
+    if message.content.startswith('Hello'):
+        msg = 'Hello {0.author.mention}, How Are You Today? <:EvoBlob1:504249845368750082>'.format(message)
+        await client.send_message(message.channel, msg)        
+        
     if message.content.startswith('bye'):
         msg = 'GoodBye {0.author.mention}, Hope To See You Again Soon <:EvoBlob1:504249845368750082>'.format(message)
         await client.send_message(message.channel, msg) 
+        
+    if message.content.startswith('Bye'):
+        msg = 'GoodBye {0.author.mention}, Hope To See You Again Soon <:EvoBlob1:504249845368750082>'.format(message)
+        await client.send_message(message.channel, msg)         
  
     if message.content.startswith('%invite'):
         if message.author.id == "475825699123494932":
-            msg = 'https://discordapp.com/api/oauth2/authorize?client_id=499643998194106369&permissions=0&scope=bot'.format(message)
+            msg = '[Need to update the url]'.format(message)
             await client.send_message(message.channel, msg)
         else: 
-            await client.send_message(message.channel, "Only AntiSepticBoi#9970 Can Run This Command!")                      
+            await client.send_message(message.channel, ":x: Error! You must be the bot owner to run this command!")                      
 
     if message.content.startswith('%info'):
       embed = discord.Embed(title="EVO Server Infomation", color=0xff00ff)
@@ -54,18 +62,6 @@ async def on_message(message):
       embed.add_field(name="<:EvoDiamond:504246347298242573> bye <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Triggers when you say bye <:EvoBlob1:504249845368750082>", inline=False)
       embed.add_field(name="<:EvoDiamond:504246347298242573> say <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Makes the bot say something when you use %say msg <:EvoBlob1:504249845368750082>", inline=False)
       embed.add_field(name="<:EvoDiamond:504246347298242573> info <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Lists the EVO Servers infomation <:EvoBlob1:504249845368750082>", inline=False) 
-      embed.add_field(name="<:EvoDiamond:504246347298242573> staff <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Lists EVO Staff Team <:EvoBlob1:504249845368750082>", inline=False)
-      await client.send_message(message.channel, embed=embed) 
-      
-    if message.content.startswith('%staff'):
-      embed = discord.Embed(title="Here is the list of EVO staff!", color=0xff00ff)
-      embed.add_field(name="<:EvoDiamond:504246347298242573> MrPoly <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Owner <:EvoBlob1:504249845368750082>",inline=False)
-      embed.add_field(name="<:EvoDiamond:504246347298242573> Jackaboi <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Duel Manager <:EvoBlob1:504249845368750082>",inline=False)
-      embed.add_field(name="<:EvoDiamond:504246347298242573> TheDeibo <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Duel Manager <:EvoBlob1:504249845368750082>",inline=False)
-      embed.add_field(name="<:EvoDiamond:504246347298242573> VitalPanda <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Builder Supervisor <:EvoBlob1:504249845368750082>",inline=False)
-      embed.add_field(name="<:EvoDiamond:504246347298242573> Link1147 <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Staff <:EvoBlob1:504249845368750082>",inline=False)
-      embed.add_field(name="<:EvoDiamond:504246347298242573> Tom <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Staff <:EvoBlob1:504249845368750082>",inline=False)
-      embed.add_field(name="<:EvoDiamond:504246347298242573> Blaze <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Staff <:EvoBlob1:504249845368750082>",inline=False)
       await client.send_message(message.channel, embed=embed) 
     
     if message.content.startswith('%say'):
