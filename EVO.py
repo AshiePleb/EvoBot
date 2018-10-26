@@ -6,22 +6,24 @@ from discord.utils import get
 import time
 import os
 import random
+from itertools import cycle
 
 Client = discord.Client()
 client = commands.Bot(command_prefix = "%")
 client.remove_command("help")
+status = ['%help | EVO <3', '%help | PolyBalls <3', '%help | Jack <3', '%help | TheDeibo <3']
+
+async def change_status():
+    await client.wait_until_ready()
+    msgs = cycle(status)
+    while not client.is_closed:
+        current_status = next(msgs)
+        await client.change_presence(game=discord.Game(name=current_status))
+        await asyncio.sleep(10)
+
 @client.event
 async def on_ready():
     print("bot is ready!")
-    await client.change_presence(game=discord.Game(name="%help | EVO <3"))
-    await asyncio.sleep(10)
-    await client.change_presence(game=discord.Game(name="%help | PolyBalls <3"))
-    await asyncio.sleep(10)
-    await client.change_presence(game=discord.Game(name="%help | Jack <3"))
-    await asyncio.sleep(10)
-    await client.change_presence(game=discord.Game(name="%help | TheDeibo <3"))
-    await asyncio.sleep(10) 
-
     
 @client.event
 async def on_message(message):
@@ -42,7 +44,7 @@ async def on_message(message):
         await client.send_message(message.channel, msg)         
         await client.process_commands(message)
     elif message.content.startswith(':zzz:'):
-        if message.author == "Evo Bot":
+        if message.author == "Evo Bot#4846":
             emoji = get(client.get_all_emojis(),id='505440307085836288')
             await client.add_reaction(message, emoji)
             await client.process_commands(message)
@@ -54,7 +56,7 @@ async def on_message(message):
 @client.command(pass_context=True)
 async def night(ctx):
        await client.delete_message(ctx.message)
-       await client.say(":zzz: **{}** Has gone to bed goodnight! :zzz:".format(ctx.message.author))
+       await client.say(":zzz: **{}** has gone to bed :zzz:".format(ctx.message.author))
 
 @client.command(pass_context=True)
 async def info(ctx):
@@ -82,4 +84,5 @@ async def say(ctx, *, msg):
     else:
         await client.say(":x: Error! You must have administrator permission!")
 
+client.loop.create_task(change_status())
 client.run(os.getenv('TOKEN'))
