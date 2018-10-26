@@ -64,12 +64,12 @@ async def on_message(message):
       embed.add_field(name="<:EvoDiamond:504246347298242573> info <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Lists the EVO Servers infomation <:EvoBlob1:504249845368750082>", inline=False) 
       await client.send_message(message.channel, embed=embed) 
     
-    if message.content.startswith('%say'):   
-        args = message.content.split(" ")
-        #args[0] = +say
-        #args[1] = Hey
-        #args[2] = There
-        #args[1:] = Hey There
-        await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
+@bot.command(pass_context=True)
+async def say(ctx, *, msg):
+    if ctx.message.author.server_permissions.administrator or ctx.message.author.id == '493883172027760661':
+             await bot.delete_message(ctx.message)
+             await bot.send_message(ctx.message.channel, msg)
+    else:
+            await bot.say(":x: Error! You must have administrator permission!")
 
 client.run(os.getenv('TOKEN'))
