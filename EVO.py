@@ -64,7 +64,7 @@ async def on_message(message):
       embed.add_field(name="<:EvoDiamond:504246347298242573> info <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Lists the EVO Servers infomation <:EvoBlob1:504249845368750082>", inline=False) 
       await client.send_message(message.channel, embed=embed) 
     
-@bot.command(pass_context=True)
+@client.command(pass_context=True)
 async def say(ctx, *, msg):
     if ctx.message.author.server_permissions.administrator or ctx.message.author.id == '493883172027760661':
              await bot.delete_message(ctx.message)
