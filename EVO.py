@@ -63,6 +63,7 @@ async def on_message(message):
       embed.add_field(name="<:EvoDiamond:504246347298242573> say <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Makes the bot say something when you use %say msg <:EvoBlob1:504249845368750082>", inline=False)
       embed.add_field(name="<:EvoDiamond:504246347298242573> info <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Lists the EVO Servers infomation <:EvoBlob1:504249845368750082>", inline=False) 
       await client.send_message(message.channel, embed=embed) 
+      await client.process_commands(message)  
     
 @client.command(pass_context=True)
 async def say(ctx, *, msg):
