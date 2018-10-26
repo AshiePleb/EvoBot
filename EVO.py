@@ -27,24 +27,29 @@ async def on_ready():
 async def on_message(message):
     if message.content.startswith('hello'):
         msg = 'Hello {0.author.mention}, How Are You Today? <:EvoBlob1:504249845368750082>'.format(message)
-        await client.send_message(message.channel, msg)      
+        await client.send_message(message.channel, msg)
+        await client.process_commands(message)
         
     if message.content.startswith('bye'):
         msg = 'GoodBye {0.author.mention}, Hope To See You Again Soon <:EvoBlob1:504249845368750082>'.format(message)
         await client.send_message(message.channel, msg)
+        await client.process_commands(message)
         
     if message.content.startswith('<@504587557045141514>'):
         msg = '{0.author.mention}, Why you tagging me <:PeepoPinnged:501412813101858836>'.format(message)
         await client.send_message(message.channel, msg) 
+        await client.process_commands(message)
         
     if message.content.startswith('<@493883172027760661>'):
         msg = 'Jack is currently AFK he will respond soon! <:EvoBlob2:504721901067829248>'.format(message)
         await client.send_message(message.channel, msg)         
- 
+        await client.process_commands(message)
+        
     if message.content.startswith('%invite'):
         if message.author.id == "493883172027760661":
             msg = '[Need to update the url]'.format(message)
             await client.send_message(message.channel, msg)
+            await client.process_commands(message)
         else: 
             await client.send_message(message.channel, ":x: Error! You must be the bot owner to run this command!")                      
 
@@ -55,7 +60,8 @@ async def on_message(message):
       embed.add_field(name="<:EvoDiamond:504246347298242573> Discord <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> https://discord.gg/zRh8WP6 <:EvoBlob1:504249845368750082>", inline=False)
       embed.add_field(name="<:EvoDiamond:504246347298242573> Vote <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> https://minecraftpocket-servers.com/server/80563/vote/ <:EvoBlob1:504249845368750082>", inline=False)  
       await client.send_message(message.channel, embed=embed)    
-        
+      await client.process_commands(message)  
+    
     if message.content.startswith('%help'):
       embed = discord.Embed(title="EVO Bot Commands", description="Bot Prefix `%`", color=0xff00ff)
       embed.add_field(name="<:EvoDiamond:504246347298242573> hello <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Triggers when you say hello <:EvoBlob1:504249845368750082>", inline=False)
@@ -70,6 +76,7 @@ async def say(ctx, *, msg):
     if ctx.message.author.server_permissions.administrator or ctx.message.author.id == '493883172027760661':
              await client.delete_message(ctx.message)
              await client.send_message(ctx.message.channel, msg)
+             await client.process_commands(message)   
     else:
             await client.say(":x: Error! You must have administrator permission!")
 
