@@ -38,7 +38,7 @@ async def on_message(message):
         await client.send_message(message.channel, msg) 
         await client.process_commands(message)
     elif message.content.startswith('<@493883172027760661>'):
-        msg = '**{}** Jack is currently AFK he will respond soon! <:EvoBlob2:504721901067829248>'
+        msg = '**{}** Jack is currently AFK he will respond soon! <:EvoBlob2:504721901067829248>'.format(ctx.message.author))
         await client.send_message(message.channel, msg)         
         await client.process_commands(message)
     else:
