@@ -64,16 +64,6 @@ async def on_message(message):
       embed.add_field(name="<:EvoDiamond:504246347298242573> info <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Lists the EVO Servers infomation <:EvoBlob1:504249845368750082>", inline=False) 
       await client.send_message(message.channel, embed=embed) 
     
-if message.content.startswith('%suggest'):
-      newMessage = message.content[:]
-      name = '**{0.author.mention} has suggested:**'.format(message)
-      await client.delete_message(message)
-      newMessage =  newMessage.replace("/suggest", " ",1)
-      embed = discord.Embed(title="Suggestion", description= name, color=0x4F5FB7)
-      embed.add_field(name="ﾠ", value= newMessage, inline=False)
-      embed.add_field(name="ﾠ", value=":thumbsup: - yes / :thumbsdown: - no", inline=False)
-      await client.send_message(discord.Object(id='487266078053892107'), embed=embed)    
-    
 @client.command(pass_context=True)
 async def say(ctx, *, msg):
     if ctx.message.author.server_permissions.administrator or ctx.message.author.id == '493883172027760661':
