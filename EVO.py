@@ -64,7 +64,7 @@ async def help(ctx):
 
 @client.command(pass_context=True)
 async def say(ctx, *, msg):
-    if ctx.message.author.server_permissions.administrator or ctx.message.author.id == '493883172027760661':
+    if ctx.message.author.server_permissions.administrator or ctx.message.author.id == '288163958022471680':
         await client.delete_message(ctx.message)
         await client.send_message(ctx.message.channel, msg) 
     else:
