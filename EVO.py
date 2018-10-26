@@ -45,9 +45,10 @@ async def on_message(message):
         await client.process_commands(message)
 @client.command(pass_context=True)
 async def night(ctx):
-       await client.say("**{}** has gone to bed goodnight :zzz:!".format(ctx.message.author))
-       emoji = get(client.get_all_emojis(),name='zzz')
+       await client.say("***{}*** Has gone to bed :zzz:".format(ctx.message.author))
+       emoji = get(client.get_all_emojis(),name='💤')
        await client.add_reaction(ctx.message, emoji)
+       await client.delete_message(ctx.message)
 @client.command(pass_context=True)
 async def info(ctx):
     embed = discord.Embed(title="EVO Server Infomation", color=0xff00ff)
