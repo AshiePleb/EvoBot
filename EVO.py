@@ -72,7 +72,7 @@ if message.content.startswith('%suggest'):
       embed = discord.Embed(title="Suggestion", description= name, color=0x4F5FB7)
       embed.add_field(name="ﾠ", value= newMessage, inline=False)
       embed.add_field(name="ﾠ", value=":thumbsup: - yes / :thumbsdown: - no", inline=False)
-      await client.send_message(discord.Object(id='464441461631483904'), embed=embed)    
+      await client.send_message(discord.Object(id='487266078053892107'), embed=embed)    
     
 @client.command(pass_context=True)
 async def say(ctx, *, msg):
