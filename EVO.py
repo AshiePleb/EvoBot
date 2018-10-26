@@ -46,7 +46,7 @@ async def on_message(message):
 @client.command(pass_context=True)
 async def night(ctx):
        await client.say("***{}*** Has gone to bed goodnight! :zzz:".format(ctx.message.author))
-       await client.add_reaction(ctx.message, "zzz")
+       await client.add_reaction(ctx.message, "505440307085836288")
        await client.delete_message(ctx.message)
 @client.command(pass_context=True)
 async def info(ctx):
