@@ -38,16 +38,16 @@ async def on_message(message):
         await client.send_message(message.channel, msg) 
         await client.process_commands(message)
     elif message.content.startswith('<@493883172027760661>'):
-        msg = 'Jack is currently AFK he will respond soon! <:EvoBlob2:504721901067829248>'
+        msg = '**{}** Jack is currently AFK he will respond soon! <:EvoBlob2:504721901067829248>'
         await client.send_message(message.channel, msg)         
         await client.process_commands(message)
     else:
         await client.process_commands(message)
 @client.command(pass_context=True)
 async def night(ctx):
-       await client.say("**{}** Has gone to bed Goodnight<:EvoSleep1:505441562235240448>!".format(ctx.message.author))
-       await add_reaction(message, emoji.name("<:EvoSleep:505440307085836288>"))
-       await client.delete_message(ctx.message)
+       await client.say("**{}** Has gone to bed goodnight <:EvoSleep1:505441562235240448>!".format(ctx.message.author))
+       emoji = get(client.get_all_emojis(),name='<:EvoSleep:505440307085836288>')
+       await client.add_reaction(message, emoji)
 @client.command(pass_context=True)
 async def info(ctx):
     embed = discord.Embed(title="EVO Server Infomation", color=0xff00ff)
