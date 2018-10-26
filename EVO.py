@@ -45,7 +45,7 @@ async def on_message(message):
         await client.process_commands(message)
 @client.command(pass_context=True)
 async def night(ctx):
-       await bot.say("**{}** has gone to bed goodnight <:EvoSleep1:505441562235240448>!".format(ctx.message.author))
+       await client.say("**{}** has gone to bed goodnight <:EvoSleep1:505441562235240448>!".format(ctx.message.author))
        emoji = get(client.get_all_emojis(),name='<:EvoSleep:505440307085836288>')
        await client.add_reaction(ctx.message, emoji)
 @client.command(pass_context=True)
