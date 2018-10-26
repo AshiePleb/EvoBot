@@ -67,9 +67,9 @@ async def on_message(message):
 @client.command(pass_context=True)
 async def say(ctx, *, msg):
     if ctx.message.author.server_permissions.administrator or ctx.message.author.id == '493883172027760661':
-             await bot.delete_message(ctx.message)
-             await bot.send_message(ctx.message.channel, msg)
+             await client.delete_message(ctx.message)
+             await client.send_message(ctx.message.channel, msg)
     else:
-            await bot.say(":x: Error! You must have administrator permission!")
+            await client.say(":x: Error! You must have administrator permission!")
 
 client.run(os.getenv('TOKEN'))
