@@ -11,7 +11,7 @@ from itertools import cycle
 Client = discord.Client()
 client = commands.Bot(command_prefix = "%")
 client.remove_command("help")
-status = ['%help | EVO <3', '%help | PolyBalls <3', '%help | Jack <3', '%help | TheDeibo <3', '%help | DeiiinaSea <3', 'Send Help!', 'Jack Beats Me']
+status = ['%help | EVO <3', '%help | Poly <3', '%help | Jack <3', '%help | TheDeibo <3', '%help | DeiiinaSea <3', 'Send Help!', 'Jack Beats Me']
 
 async def change_status():
     await client.wait_until_ready()
