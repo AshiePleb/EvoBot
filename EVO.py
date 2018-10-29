@@ -44,7 +44,7 @@ async def on_message(message):
         await client.send_message(message.channel, msg)         
         await client.process_commands(message) 
 
-
+@client.event
 async def info(ctx):
     embed = discord.Embed(title="EVO Server Infomation", color=0xff00ff)
     embed.add_field(name="<:EvoDiamond:504246347298242573> IP <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Coming Soon! <:EvoBlob1:504249845368750082>", inline=False)
@@ -53,7 +53,7 @@ async def info(ctx):
     embed.add_field(name="<:EvoDiamond:504246347298242573> Vote <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> https://minecraftpocket-servers.com/server/80563/vote/ <:EvoBlob1:504249845368750082>", inline=False)
     await client.say(embed=embed)
 
-
+@client.event
 async def help(ctx):
     embed = discord.Embed(title="EVO Bot Commands", description="Bot Prefix `%`", color=0xff00ff)
     embed.add_field(name="<:EvoDiamond:504246347298242573> hello <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Triggers when you say hello <:EvoBlob1:504249845368750082>", inline=False)
@@ -62,7 +62,7 @@ async def help(ctx):
     embed.add_field(name="<:EvoDiamond:504246347298242573> info <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Lists the EVO Servers infomation <:EvoBlob1:504249845368750082>", inline=False)
     await client.say(embed=embed)
 
-
+@client.event
 async def say(ctx, *, msg):
     if ctx.message.author.server_permissions.administrator or ctx.message.author.id == '493883172027760661':
         await client.delete_message(ctx.message)
