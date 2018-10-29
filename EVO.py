@@ -42,16 +42,7 @@ async def on_message(message):
     elif message.content.startswith('<@493883172027760661>'):
         msg = 'Jack is currently AFK he will respond soon! <:EvoBlob2:504721901067829248>'
         await client.send_message(message.channel, msg)         
-        await client.process_commands(message)
- 
-@client.command(pass_context=True)
-async def night(ctx):
-       await client.delete_message(ctx.message)
-       await client.say("**{}** Is going to bed goodnight! <:EvoSleep1:505441562235240448>".format(ctx.message.author))
-@client.command(pass_context=True)
-async def morning(ctx):
-       await client.delete_message(ctx.message)
-       await client.say("**{}** Has woken up good morning! <:EvoWakeup:506423918412824589>".format(ctx.message.author))    
+        await client.process_commands(message) 
 
 @client.command(pass_context=True)
 async def info(ctx):
@@ -78,6 +69,15 @@ async def say(ctx, *, msg):
         await client.send_message(ctx.message.channel, msg) 
     else:
         await client.say(":x: Error! You must have administrator permission!")
+        
+@client.command(pass_context=True)
+async def night(ctx):
+       await client.delete_message(ctx.message)
+       await client.say("**{}** Is going to bed goodnight! <:EvoSleep1:505441562235240448>".format(ctx.message.author))
 
+@client.command(pass_context=True)
+async def morning(ctx):
+       await client.delete_message(ctx.message)
+       await client.say("**{}** Has woken up good morning! <:EvoWakeup:506423918412824589>".format(ctx.message.author)) 
 client.loop.create_task(change_status())
 client.run(os.getenv('TOKEN'))
