@@ -43,20 +43,15 @@ async def on_message(message):
         msg = 'Jack is currently AFK he will respond soon! <:EvoBlob2:504721901067829248>'
         await client.send_message(message.channel, msg)         
         await client.process_commands(message)
-    elif message.content.startswith(':zzz:'):
-        if message.author == "504587557045141514":
-            emoji = get(client.get_all_emojis(),id='505440307085836288')
-            await client.add_reaction(message, emoji)
-            await client.process_commands(message)
-        else:
-            await client.process_commands(message)
-    else:
-        await client.process_commands(message)
-
+ 
 @client.command(pass_context=True)
 async def night(ctx):
        await client.delete_message(ctx.message)
-       await client.say(":zzz: **{}** has gone to bed :zzz:".format(ctx.message.author))
+       await client.say("**{}** Is going to bed goodnight! <:EvoSleep1:505441562235240448>".format(ctx.message.author))
+@client.command(pass_context=True)
+async def morning(ctx):
+       await client.delete_message(ctx.message)
+       await client.say("**{}** Has woken up good morning! <:EvoWakeup:506423918412824589>".format(ctx.message.author))    
 
 @client.command(pass_context=True)
 async def info(ctx):
