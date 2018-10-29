@@ -70,14 +70,5 @@ async def say(ctx, *, msg):
     else:
         await client.say(":x: Error! You must have administrator permission!")
         
-@client.command(pass_context=True)
-async def night(ctx):
-       await client.delete_message(ctx.message)
-       await client.say("**{}** Is going to bed goodnight! <:EvoSleep1:505441562235240448>".format(ctx.message.author))
-
-@client.command(pass_context=True)
-async def morning(ctx):
-       await client.delete_message(ctx.message)
-       await client.say("**{}** Has woken up good morning! <:EvoWakeup:506423918412824589>".format(ctx.message.author)) 
 client.loop.create_task(change_status())
 client.run(os.getenv('TOKEN'))
