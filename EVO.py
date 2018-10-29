@@ -44,7 +44,7 @@ async def on_message(message):
         await client.send_message(message.channel, msg)         
         await client.process_commands(message)
     elif message.content.startswith(':zzz:'):
-        if message.author == "Evo Bot#4846":
+        if message.author == "504587557045141514":
             emoji = get(client.get_all_emojis(),id='505440307085836288')
             await client.add_reaction(message, emoji)
             await client.process_commands(message)
