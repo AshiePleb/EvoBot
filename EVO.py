@@ -58,16 +58,6 @@ async def night(ctx):
        await client.delete_message(ctx.message)
        await client.say("**{}** Has gone to bed goodnight! <:EvoSleep:505440307085836288>".format(ctx.message.author))
   
-    elif message.content.startswith(':zzz:'):
-        if message.author == "Evo Bot#4846":
-            emoji = get(client.get_all_emojis(),id='506423918412824589')
-            await client.add_reaction(message, emoji)
-            await client.process_commands(message)
-        else:
-            await client.process_commands(message)
-    else:
-        await client.process_commands(message)
-
 @client.command(pass_context=True)
 async def morning(ctx):
        await client.delete_message(ctx.message)
