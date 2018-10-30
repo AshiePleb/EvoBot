@@ -97,7 +97,7 @@ async def user(ctx, user: discord.Member = None):
     embed.add_field(name="Currently playing", value=user.game, inline=True)
     embed.add_field(name="Joined", value=user.joined_at, inline=True)
     embed.set_thumbnail(url=user.avatar_url)
-    await bot.say(embed=embed)
+    await client.say(embed=embed)
     
 @client.command(pass_context=True)
 async def say(ctx, *, msg):
