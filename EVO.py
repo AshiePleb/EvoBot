@@ -8,10 +8,6 @@ import os
 import random
 from itertools import cycle
 
-chat_filter = ["fuck"]
-
-bypass_list = []
-
 Client = discord.Client()
 client = commands.Bot(command_prefix = "%")
 client.remove_command("help")
@@ -126,18 +122,7 @@ async def say(ctx, *, msg):
         await client.send_message(ctx.message.channel, msg) 
     else:
         await client.say(":x: Error! You must have administrator permission!")
-        
-contents = message.content.split(" ")
-    for word in contents:
-            if word.upper() in chat_filter:
-                if not message.author.id in bypass_list:
-                    try:
-                        await client.delete_message(message)
-                        await client.send_message(message.author,"%s" % "**Warning**, Please done use volgar language. x1 ")
-                        
-                    except discord.errors.NotFound:
-                        
-                        return await client.delete_message(NewMessage)        
+           
         
 client.loop.create_task(change_status())
 client.run(os.getenv('TOKEN'))
