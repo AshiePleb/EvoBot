@@ -102,7 +102,7 @@ async def user(ctx, user: discord.Member = None):
 @client.command(pass_context=True)
 async def serverinfo(ctx):
     embed = discord.Embed(name="{}'s info".format(ctx.message.server.name), description="Here is some info about the server.", color=0x00ff00)
-    embed.set_author(name="MagmaCreeper's bot")
+    embed.set_author(name="Server Info!")
     embed.add_field(name="Server owner", value=ctx.message.server.owner, inline=True)
     embed.add_field(name="Name", value=ctx.message.server.name, inline=True)
     embed.add_field(name="ID", value=ctx.message.server.id, inline=True)
