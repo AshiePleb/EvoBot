@@ -99,7 +99,7 @@ async def help(ctx):
     
 @client.command(pass_context=True)
 async def rules(ctx):
-    embed = discord.Embed(title="Rules and Terms of Service", description="------------------------------= Rules and Terms of Service =------------------------------.", color=0xff00ff)
+    embed = discord.Embed(title="------------------------------= Rules and Terms of Service =------------------------------", color=0xff00ff)
     embed.add_field(name="Rule 1", value="Please dont advertise other or non-partnered Discord/MC servers.", inline=False)
     embed.add_field(name="Rule 2", value="Be respectful and considerate towards staff and members. If you have any issues or concerns then a DM would be more appropriate.", inline=False)
     embed.add_field(name="Rule 3", value="Do not spam or use server BOTs incorrectly or with miss-use.", inline=False)
