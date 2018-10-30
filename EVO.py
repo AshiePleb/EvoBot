@@ -31,15 +31,15 @@ async def on_message(message):
         msg = 'Hello {0.author.mention}, How Are You Today? <:EvoBlob1:504249845368750082>'.format(message)
         await client.send_message(message.channel, msg)
         await client.process_commands(message)
-    if message.content.startswith('bye'):
+    elif message.content.startswith('bye'):
         msg = 'GoodBye {0.author.mention}, Hope To See You Again Soon <:EvoBlob1:504249845368750082>'.format(message)
         await client.send_message(message.channel, msg)
         await client.process_commands(message) 
-    if message.content.startswith('<@504587557045141514>'):
+    elif message.content.startswith('<@504587557045141514>'):
         msg = '{0.author.mention}, Why you tagging me <:PeepoPinnged:501412813101858836>'.format(message)
         await client.send_message(message.channel, msg) 
         await client.process_commands(message)
-    if message.content.startswith('<@493883172027760661>'):
+    elif message.content.startswith('<@493883172027760661>'):
         msg = 'Jack is currently AFK he will respond soon! <:EvoBlob2:504721901067829248>'
         await client.send_message(message.channel, msg)         
         await client.process_commands(message)       
