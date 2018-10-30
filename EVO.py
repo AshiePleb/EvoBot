@@ -98,6 +98,20 @@ async def user(ctx, user: discord.Member = None):
     embed.add_field(name="Joined", value=user.joined_at, inline=True)
     embed.set_thumbnail(url=user.avatar_url)
     await client.say(embed=embed)
+
+@client.command(pass_context=True)
+async def serverinfo(ctx):
+    embed = discord.Embed(name="{}'s info".format(ctx.message.server.name), description="Here is some info about the server.", color=0x00ff00)
+    embed.set_author(name="MagmaCreeper's bot")
+    embed.add_field(name="Server owner", value=ctx.message.server.owner, inline=True)
+    embed.add_field(name="Name", value=ctx.message.server.name, inline=True)
+    embed.add_field(name="ID", value=ctx.message.server.id, inline=True)
+    embed.add_field(name="Channels", value=len(ctx.message.server.channels), inline=True)
+    embed.add_field(name="Roles", value=len(ctx.message.server.roles), inline=True)
+    embed.add_field(name="Members", value=len(ctx.message.server.members), inline=True)
+    embed.add_field(name="Region", value=ctx.message.server.region, inline=True)
+    embed.set_thumbnail(url=ctx.message.server.icon_url)
+    await client.say(embed=embed)
     
 @client.command(pass_context=True)
 async def say(ctx, *, msg):
