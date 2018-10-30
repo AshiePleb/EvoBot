@@ -39,9 +39,7 @@ async def on_message(message):
                     await client.send_message(message.channel, "**Hey!** You're not allowed to use that word here!")
                 except discord.errors.NotFound:
                     return    
-@client.event
-async def on_message(message):
-    if message.content.startswith('hello'):
+    elif message.content.startswith('hello'):
         msg = 'Hello {0.author.mention}, How Are You Today? <:EvoBlob1:504249845368750082>'.format(message)
         await client.send_message(message.channel, msg)
         await client.process_commands(message)
