@@ -43,7 +43,36 @@ async def on_message(message):
         msg = 'Jack is currently AFK he will respond soon! <:EvoBlob2:504721901067829248>'
         await client.send_message(message.channel, msg)         
         await client.process_commands(message)       
+    elif message.content.startswith(':lol1:'):
+        if message.author == "Evo Bot#4846":
+            emoji = get(client.get_all_emojis(),id='505440307085836288')
+            await client.add_reaction(message, emoji)
+            await client.process_commands(message)
+        else:
+            await client.process_commands(message)
+    else:
+        await client.process_commands(message)
 
+@client.command(pass_context=True)
+async def night(ctx):
+       await client.delete_message(ctx.message)
+       await client.say("**{}** Has gone to bed goodnight! <:EvoSleep:505440307085836288>".format(ctx.message.author))
+  
+    elif message.content.startswith(':lol2:'):
+        if message.author == "Evo Bot#4846":
+            emoji = get(client.get_all_emojis(),id='506423918412824589')
+            await client.add_reaction(message, emoji)
+            await client.process_commands(message)
+        else:
+            await client.process_commands(message)
+    else:
+        await client.process_commands(message)
+
+@client.command(pass_context=True)
+async def morning(ctx):
+       await client.delete_message(ctx.message)
+       await client.say("**{}** Has just woken up good morning! <:EvoWakeup:506423918412824589>".format(ctx.message.author))
+    
 @client.command(pass_context=True)
 async def info(ctx):
     embed = discord.Embed(title="EVO Server Infomation", color=0xff00ff)
