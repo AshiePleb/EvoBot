@@ -36,7 +36,7 @@ async def on_message(message):
             if not message.author.id in bypass_list:
                 try:
                     await client.delete_message(message)
-                    await client.send_message(message.channel, "**Hey!** You're not allowed to use that word here!")
+                    await client.send_message(message.channel, "{0.author.mention}, We do not allow that language here!")
                 except discord.errors.NotFound:
                     return    
     if message.content.startswith('hello'):
