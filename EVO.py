@@ -75,10 +75,12 @@ async def info(ctx):
 @client.command(pass_context=True)
 async def help(ctx):
     embed = discord.Embed(title="EVO Bot Commands", description="Bot Prefix `%`", color=0xff00ff)
-    embed.add_field(name="<:EvoDiamond:504246347298242573> hello <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Triggers when you say hello <:EvoBlob1:504249845368750082>", inline=False)
-    embed.add_field(name="<:EvoDiamond:504246347298242573> bye <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Triggers when you say bye <:EvoBlob1:504249845368750082>", inline=False)
-    embed.add_field(name="<:EvoDiamond:504246347298242573> say <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Makes the bot say something when you use %say msg <:EvoBlob1:504249845368750082>", inline=False)
-    embed.add_field(name="<:EvoDiamond:504246347298242573> info <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Lists the EVO Servers infomation <:EvoBlob1:504249845368750082>", inline=False)
+    embed.add_field(name="<:EvoDiamond:504246347298242573> hello <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Triggers when you say hello! <:EvoBlob1:504249845368750082>", inline=False)
+    embed.add_field(name="<:EvoDiamond:504246347298242573> bye <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Triggers when you say bye! <:EvoBlob1:504249845368750082>", inline=False)
+    embed.add_field(name="<:EvoDiamond:504246347298242573> say <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Makes the bot say something when using %say (admins only)! <:EvoBlob1:504249845368750082>", inline=False)
+    embed.add_field(name="<:EvoDiamond:504246347298242573> info <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Lists the EVO Server infomation! <:EvoBlob1:504249845368750082>", inline=False)
+    embed.add_field(name="<:EvoDiamond:504246347298242573> night <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Lets everyone know you are going to bed! <:EvoBlob1:504249845368750082>", inline=False)
+    embed.add_field(name="<:EvoDiamond:504246347298242573> morning <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Lets everyone know that you have woken up! <:EvoBlob1:504249845368750082>", inline=False)
     await client.say(embed=embed)
 
 @client.command(pass_context=True)
