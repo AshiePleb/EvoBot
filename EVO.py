@@ -8,6 +8,9 @@ import os
 import random
 from itertools import cycle
 
+chat_filter = ["fuck"]
+bypass_list = []
+
 Client = discord.Client()
 client = commands.Bot(command_prefix = "%")
 client.remove_command("help")
@@ -20,9 +23,6 @@ async def change_status():
         current_status = next(msgs)
         await client.change_presence(game=discord.Game(name=current_status))
         await asyncio.sleep(5)
-        
-chat_filter = ["fuck"]
-bypass_list = []
         
 @client.event
 async def on_ready():
