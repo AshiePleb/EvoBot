@@ -98,6 +98,21 @@ async def help(ctx):
     await client.say(embed=embed)
     
 @client.command(pass_context=True)
+async def rules(ctx):
+    embed = discord.Embed(title="Rules and Terms of Service", color=0xff00ff)
+    embed.add_description(name="------------------------------= Rules and Terms of Service =------------------------------", value="<:EvoIndent:504251143585660928>", inline=False)
+    embed.add_field(name="Rule 1", value="Please dont advertise other or non-partnered Discord/MC servers.", inline=False)
+    embed.add_field(name="Rule 2", value="Be respectful and considerate towards staff and members. If you have any issues or concerns then a DM would be more appropriate.", inline=False)
+    embed.add_field(name="Rule 3", value="Do not spam or use server BOTs incorrectly or with miss-use.", inline=False)
+    embed.add_field(name="Rule 4", value="While in the server, do not hack or use Modified clients, as that will be an instant ban with no repeal, and smallest of any modified clients will not be tolerated.", inline=False)
+    embed.add_field(name="Rule 5", value="Sexual content or inappropriate names will not be tolerated and will be warned, kicked, or banned.", inline=False)
+    embed.add_field(name="Rule 6", value="For images and content posted on the website, please respect our copyright as well as regarding the Logo.", inline=False)
+    embed.add_field(name="Rule 7", value="This server in no way reflects the status and reputation that of the public Evo Lobby Map. They are separate, any correlation if any is that I built both and both have the name Evo.", inline=False)
+    embed.add_field(name="Rule 8", value="Also if you have any questions / comments / or concerns about anything DM staff, me of if you want to anonymously let us know, email us at support@evo.company.com", inline=False)
+    embed.add_field(name="Access The Discord", value="To access the rest of the discord please react with :thumbsup: to say you agree to our rules and tos!", inline=False)
+    await client.say(embed=embed)    
+    
+@client.command(pass_context=True)
 async def user(ctx, user: discord.Member = None):
     if user == None:
         user = ctx.message.author
@@ -125,21 +140,6 @@ async def serverinfo(ctx):
     embed.add_field(name="Members", value=len(ctx.message.server.members), inline=True)
     embed.add_field(name="Region", value=ctx.message.server.region, inline=True)
     embed.set_thumbnail(url=ctx.message.server.icon_url)
-    await client.say(embed=embed)
-
-@client.command(pass_context=True)
-async def rules(ctx):
-    embed = discord.Embed(title="Rules and Terms of Service", color=0xff00ff)
-    embed.add_description(name="------------------------------= Rules and Terms of Service =------------------------------", value="<:EvoIndent:504251143585660928>", inline=False)
-    embed.add_field(name="Rule 1", value="Please dont advertise other or non-partnered Discord/MC servers.", inline=False)
-    embed.add_field(name="Rule 2", value="Be respectful and considerate towards staff and members. If you have any issues or concerns then a DM would be more appropriate.", inline=False)
-    embed.add_field(name="Rule 3", value="Do not spam or use server BOTs incorrectly or with miss-use.", inline=False)
-    embed.add_field(name="Rule 4", value="While in the server, do not hack or use Modified clients, as that will be an instant ban with no repeal, and smallest of any modified clients will not be tolerated.", inline=False)
-    embed.add_field(name="Rule 5", value="Sexual content or inappropriate names will not be tolerated and will be warned, kicked, or banned.", inline=False)
-    embed.add_field(name="Rule 6", value="For images and content posted on the website, please respect our copyright as well as regarding the Logo.", inline=False)
-    embed.add_field(name="Rule 7", value="This server in no way reflects the status and reputation that of the public Evo Lobby Map. They are separate, any correlation if any is that I built both and both have the name Evo.", inline=False)
-    embed.add_field(name="Rule 8", value="Also if you have any questions / comments / or concerns about anything DM staff, me of if you want to anonymously let us know, email us at support@evo.company.com", inline=False)
-     embed.add_field(name="Access The Discord", value="To access the rest of the discord please react with :thumbsup: to say you agree to our rules and tos!", inline=False)
     await client.say(embed=embed)  
     
 @client.command(pass_context=True)
