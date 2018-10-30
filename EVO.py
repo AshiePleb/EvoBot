@@ -42,9 +42,7 @@ async def on_message(message):
     elif message.content.startswith('<@493883172027760661>'):
         msg = 'Jack is currently AFK he will respond soon! <:EvoBlob2:504721901067829248>'
         await client.send_message(message.channel, msg)         
-        await client.process_commands(message)
-    else:
-        await client.say(":x:")        
+        await client.process_commands(message)       
 
 @client.command(pass_context=True)
 async def info(ctx):
