@@ -81,6 +81,8 @@ async def help(ctx):
     embed.add_field(name="<:EvoDiamond:504246347298242573> info <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Lists the EVO Server infomation! <:EvoBlob1:504249845368750082>", inline=False)
     embed.add_field(name="<:EvoDiamond:504246347298242573> night <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Lets everyone know you are going to bed! <:EvoBlob1:504249845368750082>", inline=False)
     embed.add_field(name="<:EvoDiamond:504246347298242573> morning <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Lets everyone know that you have woken up! <:EvoBlob1:504249845368750082>", inline=False)
+    embed.add_field(name="<:EvoDiamond:504246347298242573> user <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Lists some info on the user! <:EvoBlob1:504249845368750082>", inline=False)
+    embed.add_field(name="<:EvoDiamond:504246347298242573> serverinfo <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Lists the discord servers infomation <:EvoBlob1:504249845368750082>", inline=False)
     await client.say(embed=embed)
     
 @client.command(pass_context=True)
