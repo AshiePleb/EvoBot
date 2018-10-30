@@ -20,7 +20,10 @@ async def change_status():
         current_status = next(msgs)
         await client.change_presence(game=discord.Game(name=current_status))
         await asyncio.sleep(5)
-
+        
+chat_filter = ["fuck"]
+bypass_list = []
+        
 @client.event
 async def on_ready():
     print("bot is ready!")
@@ -122,7 +125,18 @@ async def say(ctx, *, msg):
         await client.send_message(ctx.message.channel, msg) 
     else:
         await client.say(":x: Error! You must have administrator permission!")
-           
+
+@client.event
+async def on_message(message):
+    contents = message.content.split(" ")
+    for word in contents:
+        if word.upper() in chat_filter:
+            if not message.author.id in bypass_list:
+                try:
+                    await client.delete_message(message)
+                    await client.send_message(message.channel, "**Hey!** You're not allowed to use that word here!")
+                except discord.errors.NotFound:
+                    return           
         
 client.loop.create_task(change_status())
 client.run(os.getenv('TOKEN'))
