@@ -82,7 +82,23 @@ async def help(ctx):
     embed.add_field(name="<:EvoDiamond:504246347298242573> night <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Lets everyone know you are going to bed! <:EvoBlob1:504249845368750082>", inline=False)
     embed.add_field(name="<:EvoDiamond:504246347298242573> morning <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Lets everyone know that you have woken up! <:EvoBlob1:504249845368750082>", inline=False)
     await client.say(embed=embed)
-
+    
+@client.command(pass_context=True)
+async def user(ctx, user: discord.Member = None):
+    if user == None:
+        user = ctx.message.author
+    embed = discord.Embed(title="{}'s info".format(user.name), description="Here is some info i could find on the user.", color=0x00ff00)
+    embed.add_field(name="Name", value=user.name, inline=True)
+    embed.add_field(name="ID", value=user.id, inline=True)
+    embed.add_field(name="Nick", value=user.nick, inline=True)
+    embed.add_field(name="Bot", value=user.bot, inline=True)
+    embed.add_field(name="Status", value=user.status, inline=True)
+    embed.add_field(name="Highest role", value=user.top_role, inline=True)
+    embed.add_field(name="Currently playing", value=user.game, inline=True)
+    embed.add_field(name="Joined", value=user.joined_at, inline=True)
+    embed.set_thumbnail(url=user.avatar_url)
+    await bot.say(embed=embed)
+    
 @client.command(pass_context=True)
 async def say(ctx, *, msg):
     if ctx.message.author.server_permissions.administrator or ctx.message.author.id == '493883172027760661':
