@@ -24,6 +24,36 @@ async def change_status():
 @client.event
 async def on_ready():
     print("bot is ready!")
+
+@client.event
+async def on_member_join(member):
+    serverid = member.server.id
+    if serverid == "504246217589522443":
+        server = member.server
+        channel = server.get_channel("504246217589522447")
+        message = ''
+        await client.send_message(channel, message)
+        chan = [channel for channel in bot.get_all_channels() if channel.name == 'general'][0]
+        embed = discord.Embed(title="User Joined", description="", color=0x00FF00)
+        embed.add_field(name="Name", value=member.name, inline=True)
+        embed.add_field(name="ID", value=member.id, inline=True)
+        embed.add_field(name="Bot", value=member.bot, inline=True)
+        embed.set_thumbnail(url=member.avatar_url)
+        embed.set_footer(text="Joined At {}".format(member.joined_at), icon_url=embed.Empty)
+        await clleint.send_message(chan, embed=embed)
+    
+@client.event
+async def on_member_leave(member):
+    serverid = member.server.id
+    if serverid == "504246217589522443":
+        chan = [channel for channel in bot.get_all_channels() if channel.name == 'general'][0]
+        embed = discord.Embed(title="User Left", description="", color=0x00FF00)
+        embed.add_field(name="Name", value=member.name, inline=True)
+        embed.add_field(name="ID", value=member.id, inline=True)
+        embed.add_field(name="Bot", value=member.bot, inline=True)
+        embed.set_thumbnail(url=member.avatar_url)
+        embed.set_footer(text="Joined At {}".format(member.joined_at), icon_url=embed.Empty)
+        await client.send_message(chan, embed=embed)    
     
 @client.event
 async def on_message(message):
