@@ -149,5 +149,33 @@ async def say(ctx, *, msg):
     else:
         await client.say(":x: Error! You must have administrator permission!")     
         
+@client.command(pass_context=True)
+async def kick(ctx, user: discord.Member = None):
+    if user == None:
+        embed = discord.Embed(name="", description="", color=0xff0000)
+        embed.add_field(name="Usage", value="%kick <user>", inline=True)
+        await client.say(embed=embed)
+    else:
+        if ctx.message.author.server_permissions.kick_members or ctx.message.author.server_permissions.administrator:
+            await client.say("**{}** has been kicked out!".format(user.name))
+            await client.kick(user)
+        else:
+            embed=discord.Embed(title="Permission Denied.", description="You must have **Kick Members** or **Administrator** permission to use this command!", color=0xff0000)
+            await client.say(embed=embed)
+
+@client.command(pass_context=True)
+async def ban(ctx, user: discord.Member = None):
+    if user == None:
+        embed = discord.Embed(name="", description="", color=0xff0000)
+        embed.add_field(name="Usage", value="%ban <user>", inline=True)
+        await client.say(embed=embed)
+    else:
+        if ctx.message.author.server_permissions.ban_members or ctx.message.author.server_permissions.administrator:
+            await client.say("**{}** has been banned from the server!".format(user.name))
+            await client.ban(user)
+        else:
+            embed=discord.Embed(title="Permission Denied.", description="You must have **Ban Members** or **Administrator** permission to use this command!", color=0xff0000)
+            await client.say(embed=embed)
+        
 client.loop.create_task(change_status())
 client.run(os.getenv('TOKEN'))
