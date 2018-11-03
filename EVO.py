@@ -72,6 +72,10 @@ async def night(ctx):
 @client.command(pass_context=True)
 async def morning(ctx):
        await client.say("**{}** Has just woken up good morning! <:EvoWakeup:506423918412824589>".format(ctx.message.author))
+
+@client.command(pass_context=True)
+async def nap(ctx):
+       await client.say("**{}** Has gone to take a nap! <:EvoSleep1:505441562235240448>".format(ctx.message.author))        
     
 @client.command(pass_context=True)
 async def info(ctx):
