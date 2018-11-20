@@ -67,14 +67,17 @@ async def on_message(message):
         
 @client.command(pass_context=True)
 async def night(ctx):
+       await client.delete_message(ctx.message)
        await client.say("**{}** Has gone to bed goodnight! <:EvoSleep:505440307085836288>".format(ctx.message.author))
   
 @client.command(pass_context=True)
 async def morning(ctx):
+       await client.delete_message(ctx.message)
        await client.say("**{}** Has just woken up good morning! <:EvoWakeup:506423918412824589>".format(ctx.message.author))
 
 @client.command(pass_context=True)
 async def nap(ctx):
+       await client.delete_message(ctx.message)
        await client.say("**{}** Has gone to take a nap! <:EvoSleep1:505441562235240448>".format(ctx.message.author))        
     
 @client.command(pass_context=True)
@@ -148,6 +151,7 @@ async def serverinfo(ctx):
 @client.command(pass_context=True)
 async def say(ctx, *, msg):
     if ctx.message.author.server_permissions.administrator or ctx.message.author.id == '493883172027760661':
+        await client.delete_message(ctx.message)
         await client.send_message(ctx.message.channel, msg) 
     else:
         await client.say(":x: Error! You must have administrator permission!")     
