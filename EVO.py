@@ -8,7 +8,7 @@ import os
 import random
 from itertools import cycle
 
-chat_filter = ["FUCK","FUCKING", "NIGGA", "ASS", "HOE"]
+chat_filter = []
 bypass_list = []
 
 Client = discord.Client()
