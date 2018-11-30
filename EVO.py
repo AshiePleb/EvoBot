@@ -12,6 +12,7 @@ chat_filter = []
 bypass_list = []
 
 Client = discord.Client()
+startup_extensions = ["Music"]
 client = commands.Bot(command_prefix = "%")
 client.remove_command("help")
 status = ['%help | EVO <3', '%help | Poly <3', '%help | Jack <3', '%help | TheDeibo <3', '%help | DeiiinaSea <3', 'Send Help!', 'Jack Beats Me']
@@ -27,7 +28,10 @@ async def change_status():
 @client.event
 async def on_ready():
     print("bot is ready!")
-
+class Main_Commands():
+        def __init__(self, bot):
+         self.bot = bot
+        
 @client.event
 async def on_message(message):
     contents = message.content.split(" ")
@@ -184,5 +188,14 @@ async def ban(ctx, user: discord.Member = None):
             embed=discord.Embed(title="Permission Denied.", description="You must have **Ban Members** or **Administrator** permission to use this command!", color=0xff0000)
             await client.say(embed=embed)
         
+        
+if __name__ == "__main__":
+    for extension in startup_extensions:
+        try:
+            bot.load_extension(extension)
+        except Exception as e:
+            exc = '{}: {}'.format(type(e).__name__, e)
+            print('Failed to load extension {}\n{}'.fortmat(extension, exc))
+            
 client.loop.create_task(change_status())
 client.run(os.getenv('TOKEN'))
