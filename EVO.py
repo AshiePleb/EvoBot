@@ -40,19 +40,19 @@ async def on_message(message):
                 except discord.errors.NotFound:
                     return    
     if message.content.startswith('hello'):
-        msg = 'Hello {0.author.mention}, How Are You Today? <:EvoBlob1:504249845368750082>'.format(message)
+        msg = 'Hello {0.author.mention}, How Are You Today?'.format(message)
         await client.send_message(message.channel, msg)
         await client.process_commands(message)
     elif message.content.startswith('bye'):
-        msg = 'GoodBye {0.author.mention}, Hope To See You Again Soon <:EvoBlob1:504249845368750082>'.format(message)
+        msg = 'GoodBye {0.author.mention}, Hope To See You Again Soon'.format(message)
         await client.send_message(message.channel, msg)
         await client.process_commands(message) 
-    elif message.content.startswith('<@504587557045141514>'):
-        msg = '{0.author.mention}, Why you tagging me <:PeepoPinnged:501412813101858836>'.format(message)
+    elif message.content.startswith('<BOT ID>'):
+        msg = '{0.author.mention}, Why you tagging me '.format(message)
         await client.send_message(message.channel, msg) 
         await client.process_commands(message)
-    elif message.content.startswith('<@493883172027760661>'):
-        msg = 'Jack is currently AFK he will respond soon! <:EvoBlob2:504721901067829248>'
+    elif message.content.startswith('<MY ID>'):
+        msg = 'Jack is currently AFK he will respond soon!'
         await client.send_message(message.channel, msg)         
         await client.process_commands(message)       
     elif message.content.startswith(':zzz:'):
@@ -68,17 +68,17 @@ async def on_message(message):
 @client.command(pass_context=True)
 async def night(ctx):
        await client.delete_message(ctx.message)
-       await client.say("**{}** Has gone to bed goodnight! <:EvoSleep:505440307085836288>".format(ctx.message.author))
+       await client.say("**{}** Has gone to bed goodnight!".format(ctx.message.author))
   
 @client.command(pass_context=True)
 async def morning(ctx):
        await client.delete_message(ctx.message)
-       await client.say("**{}** Has just woken up good morning! <:EvoWakeup:506423918412824589>".format(ctx.message.author))
+       await client.say("**{}** Has just woken up good morning!".format(ctx.message.author))
 
 @client.command(pass_context=True)
 async def nap(ctx):
        await client.delete_message(ctx.message)
-       await client.say("**{}** Has gone to take a nap! <:EvoSleep1:505441562235240448>".format(ctx.message.author))        
+       await client.say("**{}** Has gone to take a nap!".format(ctx.message.author))        
     
 @client.command(pass_context=True)
 async def info(ctx):
