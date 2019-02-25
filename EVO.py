@@ -47,7 +47,7 @@ async def on_message(message):
         msg = 'GoodBye {0.author.mention}, Hope To See You Again Soon'.format(message)
         await client.send_message(message.channel, msg)
         await client.process_commands(message) 
-    elif message.content.startswith('<BOT ID>'):
+    elif message.content.startswith('<@549399136802177026>'):
         msg = '{0.author.mention}, Why you tagging me '.format(message)
         await client.send_message(message.channel, msg) 
         await client.process_commands(message)
