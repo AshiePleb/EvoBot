@@ -51,7 +51,7 @@ async def on_message(message):
         msg = '{0.author.mention}, Why you tagging me '.format(message)
         await client.send_message(message.channel, msg) 
         await client.process_commands(message)
-    elif message.content.startswith('<MY ID>'):
+    elif message.content.startswith('<@540628244374749184'):
         msg = 'Jack is currently AFK he will respond soon!'
         await client.send_message(message.channel, msg)         
         await client.process_commands(message)       
@@ -83,25 +83,25 @@ async def nap(ctx):
 @client.command(pass_context=True)
 async def info(ctx):
     embed = discord.Embed(title="EVO Server Infomation", color=0xff00ff)
-    embed.add_field(name="<:EvoDiamond:504246347298242573> IP <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Coming Soon! <:EvoBlob1:504249845368750082>", inline=False)
-    embed.add_field(name="<:EvoDiamond:504246347298242573> Forum <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> http://evonetwork.ga/ <:EvoBlob1:504249845368750082>", inline=False)
-    embed.add_field(name="<:EvoDiamond:504246347298242573> Discord <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> https://discord.gg/zRh8WP6 <:EvoBlob1:504249845368750082>", inline=False)
-    embed.add_field(name="<:EvoDiamond:504246347298242573> Vote <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> https://minecraftpocket-servers.com/server/80563/vote/ <:EvoBlob1:504249845368750082>", inline=False)
+    embed.add_field(name="IP", value="Coming Soon!", inline=False)
+    embed.add_field(name="Forum", value="Coming Soon!", inline=False)
+    embed.add_field(name="Discord", value="Coming Soon!", inline=False)
+    embed.add_field(name="Vote", value="Coming Soon!", inline=False)
     await client.say(embed=embed)
 
 @client.command(pass_context=True)
 async def help(ctx):
     embed = discord.Embed(title="EVO Bot Commands", description="Bot Prefix `%`", color=0xff00ff)
-    embed.add_field(name="<:EvoDiamond:504246347298242573> hello <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Triggers when you say hello! <:EvoBlob1:504249845368750082>", inline=False)
-    embed.add_field(name="<:EvoDiamond:504246347298242573> bye <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Triggers when you say bye! <:EvoBlob1:504249845368750082>", inline=False)
-    embed.add_field(name="<:EvoDiamond:504246347298242573> say <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Makes the bot say something when using %say (admins only)! <:EvoBlob1:504249845368750082>", inline=False)
-    embed.add_field(name="<:EvoDiamond:504246347298242573> info <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Lists the EVO Server infomation! <:EvoBlob1:504249845368750082>", inline=False)
-    embed.add_field(name="<:EvoDiamond:504246347298242573> night <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Lets everyone know you are going to bed! <:EvoBlob1:504249845368750082>", inline=False)
-    embed.add_field(name="<:EvoDiamond:504246347298242573> morning <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Lets everyone know that you have woken up! <:EvoBlob1:504249845368750082>", inline=False)
-    embed.add_field(name="<:EvoDiamond:504246347298242573> user <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Lists some info on the user! <:EvoBlob1:504249845368750082>", inline=False)
-    embed.add_field(name="<:EvoDiamond:504246347298242573> serverinfo <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Lists the discord servers infomation! <:EvoBlob1:504249845368750082>", inline=False)
-    embed.add_field(name="<:EvoDiamond:504246347298242573> kick <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Kicks the member you tag! <:EvoBlob1:504249845368750082>", inline=False)
-    embed.add_field(name="<:EvoDiamond:504246347298242573> ban <:EvoDiamond:504246347298242573>", value="<:EvoBlob1:504249845368750082> Bans the member you tag! <:EvoBlob1:504249845368750082>", inline=False)
+    embed.add_field(name="hello", value="Triggers when you say hello!", inline=False)
+    embed.add_field(name="bye", value="Triggers when you say bye!", inline=False)
+    embed.add_field(name="say", value="Makes the bot say something when using %say (admins only)!", inline=False)
+    embed.add_field(name="info", value="Lists the EVO Server infomation!", inline=False)
+    embed.add_field(name="night", value="Lets everyone know you are going to bed!", inline=False)
+    embed.add_field(name="morning", value="Lets everyone know that you have woken up!", inline=False)
+    embed.add_field(name="user", value="Lists some info on the user!", inline=False)
+    embed.add_field(name="serverinfo", value="Lists the discord servers infomation!", inline=False)
+    embed.add_field(name="kick", value="Kicks the member you tag!", inline=False)
+    embed.add_field(name="ban", value="Bans the member you tag!", inline=False)
     await client.say(embed=embed)
     
 @client.command(pass_context=True)
@@ -150,7 +150,7 @@ async def serverinfo(ctx):
     
 @client.command(pass_context=True)
 async def say(ctx, *, msg):
-    if ctx.message.author.server_permissions.administrator or ctx.message.author.id == '493883172027760661':
+    if ctx.message.author.server_permissions.administrator or ctx.message.author.id == '540628244374749184':
         await client.delete_message(ctx.message)
         await client.send_message(ctx.message.channel, msg) 
     else:
